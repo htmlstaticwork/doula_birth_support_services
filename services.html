@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | NurtureBirth Doula Support</title>
+    <meta name="description" content="Explore our range of birth support services, including labor support, postpartum care, and childbirth education classes.">
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-leaf"></div>
+    </div>
+
+    <!-- Header (Standard) -->
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm bg-white">
+        <div class="container">
+            <a class="navbar-brand brand-font fs-3 text-primary-color" href="index.html">
+                <i class="bi bi-heart-pulse-fill me-2"></i>NurtureBirth
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" id="offcanvasNavbar">
+                <div class="offcanvas-header border-bottom">
+                    <h5 class="offcanvas-title brand-font">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Home Versions</a>
+                            <ul class="dropdown-menu border-0 shadow-sm">
+                                <li><a class="dropdown-item" href="index.html">Home 1 (Classic)</a></li>
+                                <li><a class="dropdown-item" href="home-2.html">Home 2 (Premium)</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item ms-lg-3">
+                            <a class="nav-link fw-semibold" href="login.html">Login</a>
+                        </li>
+                        <li class="nav-item ms-lg-2">
+                            <a class="nav-link btn btn-primary px-4 text-white fw-medium" href="dashboard.html">Dashboard</a>
+                        </li>
+                    </ul>
+                    
+                    <!-- Theme & RTL Controls -->
+                    <div class="d-flex align-items-center mt-3 mt-lg-0 ms-lg-3 gap-2">
+                        <button class="btn btn-sm btn-outline-secondary rounded-circle" id="theme-toggle" title="Toggle Theme">
+                            <i class="bi bi-moon-stars"></i>
+                        </button>
+                        <button class="btn btn-sm btn-outline-secondary rounded-circle" id="rtl-toggle" title="Toggle RTL">
+                            <i class="bi bi-translate"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="py-5 mt-5 bg-soft">
+        <div class="container text-center py-4">
+            <h1 class="brand-font display-4">Our Services</h1>
+            <p class="text-muted lead mx-auto" style="max-width: 700px;">Comprehensive care for every step of your journey, from the first trimester through the fourth.</p>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-lg-6">
+                    <div class="card p-0 border-0 shadow-sm overflow-hidden h-100">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-5">
+                                <img src="assets/images/card_doula.png" class="img-fluid h-100 object-fit-cover" alt="Birth Support">
+                            </div>
+                            <div class="col-md-7 p-4 bg-card-theme d-flex flex-column justify-content-center">
+                                <h3 class="brand-font">Birth Support</h3>
+                                <p class="text-muted small">Continuous physical, emotional, and informational support before, during, and just after childbirth.</p>
+                                <ul class="list-unstyled small mb-4">
+                                    <li><i class="bi bi-dot text-primary-color"></i> 24/7 on-call from 37 weeks</li>
+                                    <li><i class="bi bi-dot text-primary-color"></i> Unlimited labor support</li>
+                                    <li><i class="bi bi-dot text-primary-color"></i> 2 Prenatal & 1 Postpartum visit</li>
+                                </ul>
+                                <a href="service-details.html" class="btn btn-outline-primary btn-sm align-self-start">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="col-lg-6">
+                    <div class="card p-0 border-0 shadow-sm overflow-hidden h-100">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-5">
+                                <img src="assets/images/hero_doula_premium.png" class="img-fluid h-100 object-fit-cover" alt="Postpartum Care">
+                            </div>
+                            <div class="col-md-7 p-4 bg-card-theme d-flex flex-column justify-content-center">
+                                <h3 class="brand-font">Postpartum Care</h3>
+                                <p class="text-muted small">Specialized assistance during the 'Fourth Trimester' to ensure a smooth transition for the whole family.</p>
+                                <ul class="list-unstyled small mb-4">
+                                    <li><i class="bi bi-dot text-primary-color"></i> Newborn care & breastfeeding support</li>
+                                    <li><i class="bi bi-dot text-primary-color"></i> Light housekeeping & meal prep</li>
+                                    <li><i class="bi bi-dot text-primary-color"></i> Overnight or daytime availability</li>
+                                </ul>
+                                <a href="service-details.html" class="btn btn-outline-primary btn-sm align-self-start">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="col-lg-6">
+                    <div class="card p-0 border-0 shadow-sm overflow-hidden h-100">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-5">
+                                <img src="assets/images/hero_doula_classic.png" class="img-fluid h-100 object-fit-cover" alt="Childbirth Education">
+                            </div>
+                            <div class="col-md-7 p-4 bg-card-theme d-flex flex-column justify-content-center">
+                                <h3 class="brand-font">Childbirth Education</h3>
+                                <p class="text-muted small">Private or group classes covering physiology, comfort measures, and medical interventions.</p>
+                                <ul class="list-unstyled small mb-4">
+                                    <li><i class="bi bi-dot text-primary-color"></i> Evidence-based curriculum</li>
+                                    <li><i class="bi bi-dot text-primary-color"></i> Partner-inclusive training</li>
+                                    <li><i class="bi bi-dot text-primary-color"></i> Birth planning workshop</li>
+                                </ul>
+                                <a href="service-details.html" class="btn btn-outline-primary btn-sm align-self-start">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 4 -->
+                <div class="col-lg-6">
+                    <div class="card p-0 border-0 shadow-sm overflow-hidden h-100">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-5">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop" class="img-fluid h-100 object-fit-cover" alt="Virtual Support">
+                            </div>
+                            <div class="col-md-7 p-4 bg-card-theme d-flex flex-column justify-content-center">
+                                <h3 class="brand-font">Virtual Doula</h3>
+                                <p class="text-muted small">Support from anywhere. Video consultations and text support for families worldwide.</p>
+                                <ul class="list-unstyled small mb-4">
+                                    <li><i class="bi bi-dot text-primary-color"></i> Video birth planning sessions</li>
+                                    <li><i class="bi bi-dot text-primary-color"></i> Text/Email support through pregnancy</li>
+                                    <li><i class="bi bi-dot text-primary-color"></i> Virtual postpartum counseling</li>
+                                </ul>
+                                <a href="service-details.html" class="btn btn-outline-primary btn-sm align-self-start">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="py-5 bg-soft">
+        <div class="container">
+            <h2 class="section-title text-center d-block mb-5 mx-auto">Compare Support Levels</h2>
+            <div class="table-responsive bg-card-theme rounded-md shadow-sm p-4">
+                <table class="table align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Feature</th>
+                            <th>Birth Only</th>
+                            <th>Full Support</th>
+                            <th>Holistic Elite</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Prenatal Visits</td>
+                            <td>1 Visit</td>
+                            <td>2 Visits</td>
+                            <td>3 Visits</td>
+                        </tr>
+                        <tr>
+                            <td>Labor Support</td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Postpartum Hours</td>
+                            <td>2 Hours</td>
+                            <td>12 Hours</td>
+                            <td>40 Hours</td>
+                        </tr>
+                        <tr>
+                            <td>Lactation Support</td>
+                            <td><i class="bi bi-x-circle text-danger"></i></td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Gentle Process -->
+    <section class="py-5">
+        <div class="container text-center">
+            <h2 class="section-title d-inline-block mx-auto mb-5">Our Gentle Process</h2>
+            <div class="row g-4">
+                <!-- Step 1 -->
+                <div class="col-md-3">
+                    <div class="process-card p-4">
+                        <div class="display-4 text-primary-color mb-3"><i class="bi bi-chat-heart"></i></div>
+                        <h4 class="brand-font">Initial Connection</h4>
+                        <p class="text-muted small">A free consult to see if we're a perfect match for your journey.</p>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="col-md-3">
+                    <div class="process-card p-4 border-start border-md-0">
+                        <div class="display-4 text-primary-color mb-3"><i class="bi bi-journal-text"></i></div>
+                        <h4 class="brand-font">Prenatal Planning</h4>
+                        <p class="text-muted small">Crafting your birth vision and building trust together.</p>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="col-md-3">
+                    <div class="process-card p-4 border-start border-md-0">
+                        <div class="display-4 text-primary-color mb-3"><i class="bi bi-heart-fill"></i></div>
+                        <h4 class="brand-font">Continuous Support</h4>
+                        <p class="text-muted small">Unwavering care before, during, and right after birth.</p>
+                    </div>
+                </div>
+                <!-- Step 4 -->
+                <div class="col-md-3">
+                    <div class="process-card p-4 border-start border-md-0">
+                        <div class="display-4 text-primary-color mb-3"><i class="bi bi-house-heart"></i></div>
+                        <h4 class="brand-font">Postpartum Ease</h4>
+                        <p class="text-muted small">Nurturing your transition into parenthood and new life.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center d-block mb-5 mx-auto">Common Questions</h2>
+            <div class="accordion border-0" id="faqAccordion">
+                <div class="accordion-item border-0 mb-3 shadow-sm rounded-md overflow-hidden">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            What exactly does a doula do during labor?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            A doula provides continuous physical comfort (massage, positioning, counter-pressure), emotional steadying, and informational support. We help bridge the gap between medical staff and your personal birth goals.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item border-0 mb-3 shadow-sm rounded-md overflow-hidden">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            When should I hire a doula?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Most families hire their doula between 20-30 weeks of pregnancy. This allows time for prenatal visits and relationship building. However, we have also supported families who reached out in their final weeks!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h3 class="brand-font mb-4 text-primary-color"><i class="bi bi-heart-pulse-fill me-2"></i>NurtureBirth</h3>
+                    <p class="text-muted">Honoring the sacred journey of birth with gentle care and professional expertise.</p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="me-3 text-muted"><i class="bi bi-facebook fs-4"></i></a>
+                        <a href="#" class="me-3 text-muted"><i class="bi bi-instagram fs-4"></i></a>
+                        <a href="#" class="text-muted"><i class="bi bi-linkedin fs-4"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="fw-bold mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                        <li><a href="services.html" class="footer-link">Services</a></li>
+                        <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="fw-bold mb-4">Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                        <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="#" class="footer-link">Terms of Service</a></li>
+                        <li><a href="404.html" class="footer-link">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-4">Newsletter</h5>
+                    <p class="small text-muted">Join our community for birth tips and updates.</p>
+                    <form class="needs-validation" novalidate>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Email address" required>
+                            <button class="btn btn-primary" type="submit">Join</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-5 opacity-10">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 text-muted">&copy; 2026 NurtureBirth Support Services. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" width="30" class="me-2">
+                    <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" width="30" class="me-2">
+                    <img src="https://img.icons8.com/color/48/000000/paypal.png" alt="Paypal" width="30">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

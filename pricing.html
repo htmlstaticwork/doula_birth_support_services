@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans | NurtureBirth Doula Support</title>
+    <meta name="description" content="Affordable and comprehensive birth support packages tailored to your family's needs. Choose from Basic, Holistic, or Premium support levels.">
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header (Standard) -->
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm bg-white">
+        <div class="container">
+            <a class="navbar-brand brand-font fs-3 text-primary-color" href="index.html">
+                <i class="bi bi-heart-pulse-fill me-2"></i>NurtureBirth
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" id="offcanvasNavbar">
+                <div class="offcanvas-header border-bottom">
+                    <h5 class="offcanvas-title brand-font">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Home Versions</a>
+                            <ul class="dropdown-menu border-0 shadow-sm">
+                                <li><a class="dropdown-item" href="index.html">Home 1 (Classic)</a></li>
+                                <li><a class="dropdown-item" href="home-2.html">Home 2 (Premium)</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="pricing.html">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item ms-lg-3">
+                            <a class="nav-link fw-semibold" href="login.html">Login</a>
+                        </li>
+                        <li class="nav-item ms-lg-2">
+                            <a class="nav-link btn btn-primary px-4 text-white fw-medium" href="dashboard.html">Dashboard</a>
+                        </li>
+                    </ul>
+                    
+                    <!-- Theme & RTL Controls -->
+                    <div class="d-flex align-items-center mt-3 mt-lg-0 ms-lg-3 gap-2">
+                        <button class="btn btn-sm btn-outline-secondary rounded-circle" id="theme-toggle" title="Toggle Theme">
+                            <i class="bi bi-moon-stars"></i>
+                        </button>
+                        <button class="btn btn-sm btn-outline-secondary rounded-circle" id="rtl-toggle" title="Toggle RTL">
+                            <i class="bi bi-translate"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Pricing Header -->
+    <section class="py-5 mt-5 position-relative" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/images/hero_doula_classic.png'); background-size: cover; background-position: center; min-height: 350px; display: flex; align-items: center;">
+        <div class="container py-4 text-center">
+            <h1 class="brand-font display-4 text-white">Investment in Your Journey</h1>
+            <p class="text-white opacity-75 lead mx-auto" style="max-width: 600px;">We offer flexible support packages to ensure every family has access to professional doula care.</p>
+        </div>
+    </section>
+
+    <!-- Pricing Grid -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+                <!-- Basic Plan -->
+                <div class="col-lg-4">
+                    <div class="card bg-card-theme h-100 border-0 shadow-sm p-4 text-center">
+                        <h4 class="brand-font">Essential Birth</h4>
+                        <div class="display-5 my-3 fw-bold">$1,200</div>
+                        <p class="text-muted small mb-4">Focus on reliable care for your birth day.</p>
+                        <hr class="mb-4">
+                        <ul class="list-unstyled mb-5 text-start small">
+                            <li class="mb-2"><i class="bi bi-check-lg text-primary-color me-2"></i> One Prenatal Session</li>
+                            <li class="mb-2"><i class="bi bi-check-lg text-primary-color me-2"></i> Continuous Labor Support</li>
+                            <li class="mb-2"><i class="bi bi-check-lg text-primary-color me-2"></i> One Postpartum Check-in</li>
+                            <li class="mb-2"><i class="bi bi-check-lg text-primary-color me-2"></i> 24/7 On-Call (38-42w)</li>
+                            <li class="mb-2 text-muted opacity-50"><i class="bi bi-x-lg me-2"></i> Postpartum Overnight Visits</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline-primary w-100 mt-auto">Choose Essential</a>
+                    </div>
+                </div>
+
+                <!-- Premium Plan (Popular) -->
+                <div class="col-lg-4">
+                    <div class="card h-100 border-0 shadow-lg p-4 text-center position-relative bg-primary-color text-white">
+                        <div class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-accent-color px-3 py-2" style="z-index: 10;">MOST POPULAR</div>
+                        <h4 class="brand-font mt-2 text-white">Holistic Journey</h4>
+                        <div class="display-3 my-3 fw-bold text-white">$2,800</div>
+                        <p class="small mb-4 opacity-75">Comprehensive care through birth & postpartum.</p>
+                        <hr class="mb-4 bg-white opacity-25">
+                        <ul class="list-unstyled mb-5 text-start small">
+                            <li class="mb-2"><i class="bi bi-check-lg text-white me-2"></i> Three Prenatal Sessions</li>
+                            <li class="mb-2"><i class="bi bi-check-lg text-white me-2"></i> Unlimited Labor Support</li>
+                            <li class="mb-2"><i class="bi bi-check-lg text-white me-2"></i> 12 Hours Postpartum Care</li>
+                            <li class="mb-2"><i class="bi bi-check-lg text-white me-2"></i> 24/7 On-Call (37-43w)</li>
+                            <li class="mb-2"><i class="bi bi-check-lg text-white me-2"></i> Breastfeeding/Lactation Support</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-secondary w-100 mt-auto shadow">Choose Holistic</a>
+                    </div>
+                </div>
+
+                <!-- Elite Plan -->
+                <div class="col-lg-4">
+                    <div class="card bg-card-theme h-100 border-0 shadow-sm p-4 text-center">
+                        <h4 class="brand-font">Premier Peace</h4>
+                        <div class="display-5 my-3 fw-bold">$4,500</div>
+                        <p class="text-muted small mb-4">Concierge support for the ultimate peace of mind.</p>
+                        <hr class="mb-4">
+                        <ul class="list-unstyled mb-5 text-start small">
+                            <li class="mb-2"><i class="bi bi-check-lg text-primary-color me-2"></i> Unlimited Prenatal Support</li>
+                            <li class="mb-2"><i class="bi bi-check-lg text-primary-color me-2"></i> Full Birth Photography</li>
+                            <li class="mb-2"><i class="bi bi-check-lg text-primary-color me-2"></i> 40 Hours Postpartum Care</li>
+                            <li class="mb-2"><i class="bi bi-check-lg text-primary-color me-2"></i> Private Childbirth Class</li>
+                            <li class="mb-2"><i class="bi bi-check-lg text-primary-color me-2"></i> Meal Service (5 days)</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline-primary w-100 mt-auto">Choose Premier</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add-on Services -->
+    <section class="py-5 bg-card-theme border-top border-bottom">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="badge bg-primary-color mb-3 px-3 py-2">Flexible Options</span>
+                <h2 class="brand-font">Individual Add-ons</h2>
+                <p class="text-muted">Customize any package with these individual services to perfectly fit your needs.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-3 text-center">
+                    <div class="p-3">
+                        <i class="bi bi-clock-history fs-2 text-primary-color mb-3 d-block"></i>
+                        <h5 class="fw-bold text-theme">Postpartum Hour</h5>
+                        <p class="text-primary-color fw-bold">$45 / hr</p>
+                        <p class="small text-muted">Additional daytime support for recovery and newborn care.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="p-3 border-start">
+                        <i class="bi bi-camera-fill fs-2 text-primary-color mb-3 d-block"></i>
+                        <h5 class="fw-bold text-theme">Birth Photo Add-on</h5>
+                        <p class="text-primary-color fw-bold">$600</p>
+                        <p class="small text-muted">Capture the sacred moments of your baby's arrival.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="p-3 border-start">
+                        <i class="bi bi-laptop fs-2 text-primary-color mb-3 d-block"></i>
+                        <h5 class="fw-bold text-theme">Virtual Session</h5>
+                        <p class="text-primary-color fw-bold">$75</p>
+                        <p class="small text-muted">A dedicated video call for prenatal or feeding support.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="p-3 border-start">
+                        <i class="bi bi-book fs-2 text-primary-color mb-3 d-block"></i>
+                        <h5 class="fw-bold text-theme">Private Education</h5>
+                        <p class="text-primary-color fw-bold">$150</p>
+                        <p class="small text-muted">A customized one-on-one class in the comfort of your home.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Markers -->
+    <section class="py-5 bg-soft">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h3 class="brand-font mb-3">Accessible Care for All</h3>
+                    <p class="text-muted">We believe financial constraints should never stand in the way of professional birth support. We offer several programs to make our services more accessible:</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-coin text-primary-color me-2"></i> Payment plans (up to 12 months)</li>
+                        <li class="mb-2"><i class="bi bi-file-earmark-medical text-primary-color me-2"></i> Superbills for insurance reimbursement</li>
+                        <li class="mb-2"><i class="bi bi-gift text-primary-color me-2"></i> Gift registries and contribution links</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="bg-card-theme p-4 rounded-md shadow-sm border">
+                        <h5 class="brand-font mb-3">Custom Quote Needed?</h5>
+                        <p class="small text-muted mb-4">Looking for a mix of services? We can build a custom package for you.</p>
+                        <a href="contact.html" class="btn btn-primary btn-sm">Get Custom Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing FAQ -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="brand-font text-theme">Pricing & Financial FAQ</h2>
+                <p class="text-muted">Answering common questions about the financial side of doula care.</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion accordion-flush bg-card-theme rounded shadow-sm border" id="pricingFAQ">
+                        <div class="accordion-item bg-transparent">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-transparent fw-semibold text-theme" type="button" data-bs-toggle="collapse" data-bs-target="#pFAQ1">
+                                    Can I use my HSA or FSA to pay for doula services?
+                                </button>
+                            </h2>
+                            <div id="pFAQ1" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+                                <div class="accordion-body text-muted small">
+                                    Yes, in most cases doula services are considered a qualified medical expense. We can provide you with an itemized receipt (superbill) for reimbursement from your health savings or flexible spending account.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-transparent">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-transparent fw-semibold text-theme" type="button" data-bs-toggle="collapse" data-bs-target="#pFAQ2">
+                                    What are your payment timelines?
+                                </button>
+                            </h2>
+                            <div id="pFAQ2" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+                                <div class="accordion-body text-muted small">
+                                    We typically require a 30% retainer to secure your due date, with the remaining balance due by your 37th week of pregnancy. Custom payment schedules can be arranged if needed.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-transparent border-0">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-transparent fw-semibold text-theme" type="button" data-bs-toggle="collapse" data-bs-target="#pFAQ3">
+                                    Do you offer support for low-income families?
+                                </button>
+                            </h2>
+                            <div id="pFAQ3" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+                                <div class="accordion-body text-muted small">
+                                    Equity is central to our mission. We offer a limited number of sliding-scale slots each month and partner with local community organizations to provide subsidized care for those who qualify.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h3 class="brand-font mb-4 text-primary-color"><i class="bi bi-heart-pulse-fill me-2"></i>NurtureBirth</h3>
+                    <p class="text-muted">Honoring the sacred journey of birth with gentle care and professional expertise.</p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="me-3 text-muted"><i class="bi bi-facebook fs-4"></i></a>
+                        <a href="#" class="me-3 text-muted"><i class="bi bi-instagram fs-4"></i></a>
+                        <a href="#" class="text-muted"><i class="bi bi-linkedin fs-4"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="fw-bold mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                        <li><a href="services.html" class="footer-link">Services</a></li>
+                        <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="fw-bold mb-4">Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                        <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="#" class="footer-link">Terms of Service</a></li>
+                        <li><a href="404.html" class="footer-link">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-4">Newsletter</h5>
+                    <p class="small text-muted">Join our community for birth tips and updates.</p>
+                    <form class="needs-validation" novalidate>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Email address" required>
+                            <button class="btn btn-primary" type="submit">Join</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-5 opacity-10">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 text-muted">&copy; 2026 NurtureBirth Support Services. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" width="30" class="me-2">
+                    <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" width="30" class="me-2">
+                    <img src="https://img.icons8.com/color/48/000000/paypal.png" alt="Paypal" width="30">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | NurtureBirth</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body { background-color: var(--secondary-color); min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .auth-container { width: 100%; max-width: 450px; background: var(--card-bg); padding: 40px; border-radius: var(--radius-md); box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid var(--border-color); }
+    </style>
+</head>
+<body>
+
+    <!-- Theme & RTL Controls (Top Right) -->
+    <div class="position-fixed top-0 end-0 p-3 d-flex gap-2" style="z-index: 1050;">
+        <button class="btn btn-sm btn-outline-secondary rounded-circle" id="theme-toggle" title="Toggle Theme">
+            <i class="bi bi-moon-stars"></i>
+        </button>
+        <button class="btn btn-sm btn-outline-secondary rounded-circle" id="rtl-toggle" title="Toggle RTL">
+            <i class="bi bi-translate"></i>
+        </button>
+    </div>
+
+    <div class="auth-container">
+        <!-- Logo -->
+        <div class="text-center mb-5">
+            <a href="index.html" class="navbar-brand brand-font fs-2 text-primary-color">
+                <i class="bi bi-heart-pulse-fill me-2"></i>NurtureBirth
+            </a>
+            <p class="text-muted mt-2 small">Welcome back to your birth journey support.</p>
+        </div>
+
+        <form class="needs-validation" novalidate onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
+            <!-- Email Input -->
+            <div class="mb-3">
+                <label class="form-label small fw-bold">Email Address</label>
+                <input type="email" class="form-control" placeholder="example@email.com" required>
+            </div>
+
+            <!-- Password Input -->
+            <div class="mb-3">
+                <label class="form-label small fw-bold">Password</label>
+                <div class="input-group">
+                    <input type="password" class="form-control border-end-0" placeholder="••••••••" required>
+                    <button type="button" class="btn btn-outline-secondary border-start-0" onclick="togglePassword(this)">
+                        <i class="bi bi-eye"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Remember & Forgot -->
+            <div class="d-flex justify-content-between align-items-center mb-4 mt-2">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                    <label class="form-check-label small" for="rememberMe">Remember me</label>
+                </div>
+                <a href="#" class="text-primary-color small text-decoration-none">Forgot password?</a>
+            </div>
+
+            <!-- Login Button -->
+            <button type="submit" class="btn btn-primary w-100 btn-lg mb-4">Login Account</button>
+
+            <!-- Social Logins (UI Only) -->
+            <div class="text-center position-relative mb-4">
+                <hr class="opacity-10">
+                <span class="position-absolute top-50 start-50 translate-middle bg-card-theme px-2 small text-muted px-3">or continue with</span>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-6">
+                    <button type="button" class="btn btn-outline-secondary w-100 py-2">
+                        <i class="bi bi-google me-2"></i>Google
+                    </button>
+                </div>
+                <div class="col-6">
+                    <button type="button" class="btn btn-outline-secondary w-100 py-2">
+                        <i class="bi bi-apple me-2"></i>Apple
+                    </button>
+                </div>
+            </div>
+
+            <p class="text-center mt-5 mb-0 small text-muted">
+                Don't have an account? <a href="register.html" class="text-primary-color fw-bold text-decoration-none">Register here</a>
+            </p>
+        </form>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

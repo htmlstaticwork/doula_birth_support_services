@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | NurtureBirth</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        :root { --sidebar-width: 260px; }
+        body { background: #F8F9FA; min-height: 100vh; overflow-x: hidden; }
+        [data-bs-theme="dark"] body { background: #121212; }
+
+        /* Sidebar */
+        .sidebar-nav {
+            width: var(--sidebar-width);
+            height: 100vh;
+            position: fixed;
+            top: 0; left: 0;
+            background: #fff;
+            border-right: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 30px 20px;
+            transition: var(--transition);
+        }
+        [data-bs-theme="dark"] .sidebar-nav { background: #1E1E1E; }
+
+        .main-content {
+            margin-left: var(--sidebar-width);
+            padding: 40px;
+            min-height: 100vh;
+        }
+
+        .nav-sidebar-link {
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            border-radius: var(--radius-sm);
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-bottom: 8px;
+            transition: var(--transition);
+        }
+
+        .nav-sidebar-link:hover, .nav-sidebar-link.active {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        .nav-sidebar-link i { font-size: 1.2rem; margin-right: 12px; }
+
+        .dashboard-card {
+            border: 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            border-radius: var(--radius-md);
+            background: #fff;
+        }
+        [data-bs-theme="dark"] .dashboard-card { background: #1E1E1E; }
+
+        /* Mobile Sidebar */
+        @media (max-width: 1024px) {
+            .sidebar-nav { left: -100%; }
+            .sidebar-nav.active { left: 0; }
+            .main-content { margin-left: 0; padding: 20px; }
+            .mobile-toggle { display: block !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar Mobile Toggle -->
+    <button class="btn btn-primary position-fixed bottom-0 end-0 m-4 rounded-circle shadow-lg mobile-toggle d-none" style="z-index: 1100;" onclick="document.querySelector('.sidebar-nav').classList.toggle('active')">
+        <i class="bi bi-list fs-4"></i>
+    </button>
+
+    <!-- Sidebar -->
+    <div class="sidebar-nav">
+        <div class="mb-5 text-center">
+            <a href="index.html" class="navbar-brand brand-font fs-3 text-primary-color">
+                <i class="bi bi-heart-pulse-fill me-2"></i>NurtureBirth
+            </a>
+        </div>
+
+        <nav>
+            <a href="#" class="nav-sidebar-link active" onclick="showTab('overview', this)">
+                <i class="bi bi-speedometer2"></i> Overview
+            </a>
+            <a href="#" class="nav-sidebar-link" onclick="showTab('packages', this)">
+                <i class="bi bi-box-seam"></i> Birth Packages
+            </a>
+            <a href="#" class="nav-sidebar-link" onclick="showTab('resources', this)">
+                <i class="bi bi-journal-text"></i> Resources
+            </a>
+            <a href="#" class="nav-sidebar-link" onclick="showTab('messages', this)">
+                <i class="bi bi-chat-dots"></i> Messaging
+            </a>
+            <a href="#" class="nav-sidebar-link" onclick="showTab('settings', this)">
+                <i class="bi bi-gear"></i> Settings
+            </a>
+        </nav>
+
+        <div class="mt-auto pt-5 border-top">
+            <div class="dropdown">
+                <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle text-dark" data-bs-toggle="dropdown">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=100" width="32" height="32" class="rounded-circle me-2">
+                    <span class="small fw-bold">Elena Smith</span>
+                </a>
+                <ul class="dropdown-menu border-0 shadow-lg">
+                    <li><a class="dropdown-item" href="index.html"><i class="bi bi-box-arrow-left me-2"></i>Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div id="overview-tab" class="dashboard-tab">
+            <div class="d-flex justify-content-between align-items-center mb-5">
+                <div>
+                    <h2 class="brand-font display-6 mb-1">Hello, Elena</h2>
+                    <p class="text-muted">You are 28 weeks into your journey. Keep glowing!</p>
+                </div>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-sm btn-outline-secondary rounded-circle" id="theme-toggle"><i class="bi bi-moon-stars"></i></button>
+                    <button class="btn btn-sm btn-outline-secondary rounded-circle"><i class="bi bi-bell"></i></button>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="dashboard-card p-4 h-100 text-center">
+                        <h6 class="text-uppercase small fw-bold text-muted mb-3">Countdown to Birth</h6>
+                        <div class="display-4 brand-font text-primary-color" id="days-left">84</div>
+                        <p class="text-muted small">Days Remaining</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="dashboard-card p-4 h-100 text-center border-start border-primary border-4">
+                        <h6 class="text-uppercase small fw-bold text-muted mb-3">Active Support Plan</h6>
+                        <h4 class="brand-font">Holistic Journey</h4>
+                        <p class="text-muted small mb-0">Certified Doula: Maya Rivera</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="dashboard-card p-4 h-100 text-center">
+                        <h6 class="text-uppercase small fw-bold text-muted mb-3">Next Session</h6>
+                        <h5 class="brand-font">Prenatal Prep #1</h5>
+                        <p class="text-muted small">Tomorrow, 3:00 PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Birth Plan Checklist Preview -->
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="dashboard-card p-4">
+                        <h4 class="brand-font mb-4">Birth Plan Checklist</h4>
+                        <div class="list-group list-group-flush">
+                            <label class="list-group-item d-flex border-0 py-3 ps-0">
+                                <input class="form-check-input me-3" type="checkbox" checked disabled>
+                                <span>Initial birth goal setting with doula</span>
+                                <span class="ms-auto badge bg-success-subtle text-success">Done</span>
+                            </label>
+                            <label class="list-group-item d-flex border-0 py-3 ps-0">
+                                <input class="form-check-input me-3" type="checkbox">
+                                <span>Hospital bag packing checklist</span>
+                            </label>
+                            <label class="list-group-item d-flex border-0 py-3 ps-0">
+                                <input class="form-check-input me-3" type="checkbox">
+                                <span>Comfort measures preference list</span>
+                            </label>
+                            <label class="list-group-item d-flex border-0 py-3 ps-0">
+                                <input class="form-check-input me-3" type="checkbox">
+                                <span>Intervention education review</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="dashboard-card p-4 bg-primary-color text-white">
+                        <h5 class="brand-font mb-3 text-white">Quick Note to Doula</h5>
+                        <textarea class="form-control bg-white bg-opacity-25 border-0 text-white placeholder-white mb-3" rows="4" placeholder="Any new questions?"></textarea>
+                        <button class="btn btn-secondary w-100">Send Message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Placeholder Tabs -->
+        <div id="packages-tab" class="dashboard-tab d-none text-center py-5">
+            <h2 class="brand-font">My Birth Support Packages</h2>
+            <p class="text-muted">You are currently enrolled in the Holistic Journey package.</p>
+            <a href="pricing.html" class="btn btn-primary btn-sm mt-3">Upgrade Package</a>
+        </div>
+
+        <div id="resources-tab" class="dashboard-tab d-none py-5">
+            <h2 class="brand-font mb-4">Educational Resources</h2>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="dashboard-card p-3 d-flex align-items-center">
+                        <i class="bi bi-file-earmark-pdf fs-2 text-danger me-3"></i>
+                        <div>
+                            <h6 class="mb-0">Birth Plan Template.pdf</h6>
+                            <small class="text-muted">2.4 MB • Click to download</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="dashboard-card p-3 d-flex align-items-center">
+                        <i class="bi bi-camera-video fs-2 text-primary me-3"></i>
+                        <div>
+                            <h6 class="mb-0">Breathing Exercises Video</h6>
+                            <small class="text-muted">High Quality • 15:00 min</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+</html>
