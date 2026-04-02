@@ -347,10 +347,23 @@ h1, h2, h3, h4, h5, h6, .brand-font {
 /* Navbar */
 .navbar {
     background-color: var(--nav-bg);
-    backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
     padding: 1.2rem 0;
     transition: all 0.4s ease; /* Added for smooth scrolling effect */
+}
+
+/* Fix for mobile menu (offcanvas) inside navbar:
+   Applying backdrop-filter directly to .navbar makes it a containing block,
+   which confines the fixed offcanvas to the navbar height.
+   Using ::before allows the blur without breaking the offcanvas. */
+.navbar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: -1;
+    pointer-events: none;
 }
 
 [data-bs-theme="dark"] .navbar {

@@ -121,18 +121,50 @@ function initForms() {
  * Init offcanvas helpers so the mobile menu closes on link tap and aria-expanded is accurate.
  */
 function initOffcanvasMenu() {
-    if (typeof bootstrap === 'undefined' || typeof bootstrap.Offcanvas === 'undefined') return;
+    // Wait for Bootstrap to be fully loaded
+    const checkBootstrap = () => {
+        if (typeof bootstrap !== 'undefined' && typeof bootstrap.Offcanvas !== 'undefined') {
+            const offcanvasElement = document.getElementById('offcanvasNavbar');
+            const toggler = document.querySelector('.navbar-toggler[data-bs-target="#offcanvasNavbar"]');
+            if (!offcanvasElement || !toggler) return;
 
-    const offcanvasElement = document.getElementById('offcanvasNavbar');
+            // Create Bootstrap offcanvas instance
+            const offcanvas = new bootstrap.Offcanvas(offcanvasElement);
+            
+            // Update aria-expanded attributes
+            offcanvasElement.addEventListener('shown.bs.offcanvas', () => toggler.setAttribute('aria-expanded', 'true'));
+            offcanvasElement.addEventListener('hidden.bs.offcanvas', () => toggler.setAttribute('aria-expanded', 'false'));
+
+            // Close menu when clicking on nav links (except dropdown toggles)
+            const navLinks = offcanvasElement.querySelectorAll('.nav-link:not(.dropdown-toggle)');
+            navLinks.forEach(link => link.addEventListener('click', () => offcanvas.hide()));
+        } else {
+            // If Bootstrap is not ready, wait and check again
+            setTimeout(checkBootstrap, 100);
+        }
+    };
+    
+    checkBootstrap();
+    
+    // Fallback: Manual toggle if Bootstrap offcanvas fails
     const toggler = document.querySelector('.navbar-toggler[data-bs-target="#offcanvasNavbar"]');
-    if (!offcanvasElement || !toggler) return;
-
-    const offcanvasInstance = bootstrap.Offcanvas.getOrCreateInstance(offcanvasElement);
-    offcanvasElement.addEventListener('shown.bs.offcanvas', () => toggler.setAttribute('aria-expanded', 'true'));
-    offcanvasElement.addEventListener('hidden.bs.offcanvas', () => toggler.setAttribute('aria-expanded', 'false'));
-
-    const navLinks = offcanvasElement.querySelectorAll('.nav-link:not(.dropdown-toggle)');
-    navLinks.forEach(link => link.addEventListener('click', () => offcanvasInstance.hide()));
+    const offcanvasElement = document.getElementById('offcanvasNavbar');
+    const closeBtn = offcanvasElement?.querySelector('.btn-close');
+    
+    if (toggler && offcanvasElement) {
+        toggler.addEventListener('click', (e) => {
+            e.preventDefault();
+            offcanvasElement.classList.toggle('show');
+            toggler.setAttribute('aria-expanded', offcanvasElement.classList.contains('show'));
+        });
+    }
+    
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            offcanvasElement.classList.remove('show');
+            toggler.setAttribute('aria-expanded', 'false');
+        });
+    }
 }
 
 /**
