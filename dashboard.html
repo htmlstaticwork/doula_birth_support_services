@@ -65,6 +65,20 @@
         }
         [data-bs-theme="dark"] .dashboard-card { background: #1E1E1E; }
 
+        .dashboard-header-controls .btn {
+            min-width: 44px;
+            min-height: 44px;
+        }
+
+        .dashboard-settings-grid .dashboard-settings-card {
+            background: #fff;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        [data-bs-theme="dark"] .dashboard-settings-card {
+            background: #1E1E1E;
+            border-color: rgba(255,255,255,0.08);
+        }
+
         /* Mobile Sidebar */
         @media (max-width: 1024px) {
             .sidebar-nav { left: -100%; }
@@ -109,7 +123,7 @@
 
         <div class="mt-auto pt-5 border-top">
             <div class="dropdown">
-                <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle text-dark" data-bs-toggle="dropdown">
+                <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle text-theme" data-bs-toggle="dropdown">
                     <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=100" width="32" height="32" class="rounded-circle me-2">
                     <span class="small fw-bold">Elena Smith</span>
                 </a>
@@ -128,7 +142,10 @@
                     <h2 class="brand-font display-6 mb-1">Hello, Elena</h2>
                     <p class="text-muted">You are 28 weeks into your journey. Keep glowing!</p>
                 </div>
-                <div class="d-flex gap-2">
+                <div class="d-flex align-items-center gap-2 dashboard-header-controls">
+                    <button class="btn btn-sm btn-outline-secondary rounded-circle dashboard-hamburger d-lg-none" aria-label="Open menu" onclick="toggleSidebar()">
+                        <i class="bi bi-list"></i>
+                    </button>
                     <button class="btn btn-sm btn-outline-secondary rounded-circle" id="theme-toggle"><i class="bi bi-moon-stars"></i></button>
                     <button class="btn btn-sm btn-outline-secondary rounded-circle"><i class="bi bi-bell"></i></button>
                 </div>
@@ -220,6 +237,90 @@
                         <div>
                             <h6 class="mb-0">Breathing Exercises Video</h6>
                             <small class="text-muted">High Quality • 15:00 min</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="settings-tab" class="dashboard-tab d-none py-5">
+            <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-4">
+                <div>
+                    <h2 class="brand-font mb-1">Settings</h2>
+                    <p class="text-muted mb-0">Update your account, preferences, and notification controls in one place.</p>
+                </div>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-outline-secondary btn-sm" onclick="showTab('overview')">Back to Overview</button>
+                    <button class="btn btn-primary btn-sm">Save Changes</button>
+                </div>
+            </div>
+
+            <div class="row g-4 dashboard-settings-grid">
+                <div class="col-lg-6">
+                    <div class="dashboard-card dashboard-settings-card p-4">
+                        <h5 class="brand-font mb-3">Profile & Security</h5>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Full Name</label>
+                            <input type="text" class="form-control" value="Elena Smith">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Email Address</label>
+                            <input type="email" class="form-control" value="elena@nurturebirth.com" disabled>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Due Date</label>
+                            <input type="date" class="form-control" value="2026-07-24">
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="twoFactor" checked>
+                            <label class="form-check-label small" for="twoFactor">Enable two-factor authentication</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="dashboard-card dashboard-settings-card p-4">
+                        <h5 class="brand-font mb-3">Notification Preferences</h5>
+                        <div class="form-check form-switch mb-3">
+                            <input class="form-check-input" type="checkbox" id="notifyMessage" checked>
+                            <label class="form-check-label small" for="notifyMessage">Doula messages</label>
+                        </div>
+                        <div class="form-check form-switch mb-3">
+                            <input class="form-check-input" type="checkbox" id="notifyAppointments" checked>
+                            <label class="form-check-label small" for="notifyAppointments">Upcoming appointments</label>
+                        </div>
+                        <div class="form-check form-switch mb-3">
+                            <input class="form-check-input" type="checkbox" id="notifyNews">
+                            <label class="form-check-label small" for="notifyNews">Community news & tips</label>
+                        </div>
+                        <div class="form-check form-switch mb-0">
+                            <input class="form-check-input" type="checkbox" id="notifyPromos">
+                            <label class="form-check-label small" for="notifyPromos">Promotions & offers</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="dashboard-card dashboard-settings-card p-4">
+                        <h5 class="brand-font mb-3">Privacy & Sharing</h5>
+                        <p class="text-muted small mb-3">Choose what’s visible to your doula and shared across your support circle.</p>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="p-3 bg-soft rounded-3 text-center">
+                                    <small class="text-uppercase fw-bold">Visibility</small>
+                                    <p class="h5 mb-0 brand-font text-primary-color">Private</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 bg-soft rounded-3 text-center">
+                                    <small class="text-uppercase fw-bold">Team Access</small>
+                                    <p class="h5 mb-0 brand-font text-primary-color">Custom</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3 bg-soft rounded-3 text-center">
+                                    <small class="text-uppercase fw-bold">Sharing</small>
+                                    <p class="h5 mb-0 brand-font text-primary-color">Enabled</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
