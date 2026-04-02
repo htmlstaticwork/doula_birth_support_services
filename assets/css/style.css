@@ -277,8 +277,8 @@ h1, h2, h3, h4, h5, h6, .brand-font {
 .login-btn {
     border-radius: 999px;
     padding: 0.45rem 1.6rem;
-    border: 1px solid var(--primary-color);
-    background-color: transparent;
+    border: 1.5px solid var(--primary-color);
+    background-color: var(--secondary-color);
     color: var(--primary-color);
     font-weight: 600;
     transition: var(--transition);
@@ -286,10 +286,15 @@ h1, h2, h3, h4, h5, h6, .brand-font {
 
 .login-btn:hover,
 .login-btn:focus-visible {
-    background-color: var(--primary-color);
-    color: #fff;
-    box-shadow: 0 0 0 6px rgba(74, 93, 74, 0.15);
+    background-color: #fff;
+    color: var(--primary-color);
+    border-color: #fff;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
     text-decoration: none;
+}
+
+.navbar .login-btn {
+    border-color: var(--primary-color);
 }
 
 /* Icon Toggle Buttons */
