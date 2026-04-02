@@ -258,6 +258,22 @@ h1, h2, h3, h4, h5, h6, .brand-font {
     border-color: #E6DBC0;
 }
 
+.social-auth-btn {
+    border-radius: 55px;
+    border-width: 1.5px;
+    font-weight: 600;
+    color: var(--text-color);
+    background-color: var(--card-bg);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.social-auth-btn:hover {
+    background-color: #fff;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+}
+
 .login-btn {
     border-radius: 999px;
     padding: 0.45rem 1.6rem;
