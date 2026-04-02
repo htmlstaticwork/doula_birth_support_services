@@ -318,6 +318,50 @@ h1, h2, h3, h4, h5, h6, .brand-font {
     box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
+.support-journey-frame {
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.02) 100%), #f7f1e6;
+    border: 1px solid #e3d7c9;
+    border-radius: 1.5rem;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(18, 18, 18, 0.05);
+}
+
+.support-journey-frame .support-journey-card {
+    border: none;
+    background-color: transparent;
+    padding: 1.75rem;
+    border-radius: 1rem;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.support-journey-frame .support-journey-card h4 {
+    margin-bottom: 0.5rem;
+}
+
+.support-journey-frame .support-journey-card p {
+    line-height: 1.6;
+}
+
+@media (max-width: 991px) {
+    .support-journey-frame {
+        padding: 2rem 1.5rem;
+    }
+
+    .support-journey-frame .support-journey-card {
+        padding: 1.5rem;
+        border-radius: 1rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .support-journey-frame {
+        padding: 1.5rem 1rem;
+    }
+}
+
 .nav-link:not(.btn) {
     font-weight: 500;
     color: var(--text-color); /* Removed !important to allow utility overrides */
