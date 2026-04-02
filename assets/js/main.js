@@ -49,6 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 7. Form Validation (Bootstrap 5)
     initForms();
+
+    // 8. Offcanvas helpers (improve mobile/ tablet menu interactivity)
+    initOffcanvasMenu();
 });
 
 /* --- FUNCTIONS --- */
@@ -112,6 +115,24 @@ function initForms() {
             form.classList.add('was-validated');
         }, false);
     });
+}
+
+/**
+ * Init offcanvas helpers so the mobile menu closes on link tap and aria-expanded is accurate.
+ */
+function initOffcanvasMenu() {
+    if (typeof bootstrap === 'undefined' || typeof bootstrap.Offcanvas === 'undefined') return;
+
+    const offcanvasElement = document.getElementById('offcanvasNavbar');
+    const toggler = document.querySelector('.navbar-toggler[data-bs-target="#offcanvasNavbar"]');
+    if (!offcanvasElement || !toggler) return;
+
+    const offcanvasInstance = bootstrap.Offcanvas.getOrCreateInstance(offcanvasElement);
+    offcanvasElement.addEventListener('shown.bs.offcanvas', () => toggler.setAttribute('aria-expanded', 'true'));
+    offcanvasElement.addEventListener('hidden.bs.offcanvas', () => toggler.setAttribute('aria-expanded', 'false'));
+
+    const navLinks = offcanvasElement.querySelectorAll('.nav-link:not(.dropdown-toggle)');
+    navLinks.forEach(link => link.addEventListener('click', () => offcanvasInstance.hide()));
 }
 
 /**
