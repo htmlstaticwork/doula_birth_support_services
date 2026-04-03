@@ -91,6 +91,17 @@
             box-shadow: none;
         }
 
+        .dashboard-hamburger.dropdown-toggle::after {
+            display: none;
+        }
+
+        .dashboard-mobile-menu .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
         [data-bs-theme="dark"] .dashboard-header-controls {
             background: rgba(255, 255, 255, 0.08);
         }
@@ -109,13 +120,22 @@
             .sidebar-nav { left: -100%; }
             .sidebar-nav.active { left: 0; }
             .main-content { margin-left: 0; padding: 20px; }
-            .mobile-toggle { display: block !important; }
+            .mobile-toggle { display: none !important; }
         }
 
         @media (max-width: 768px) {
+            .dashboard-overview-header {
+                position: relative;
+                align-items: flex-start !important;
+                padding-right: 72px;
+            }
+
             .dashboard-header-controls {
-                width: 100%;
-                justify-content: flex-start;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: auto;
+                justify-content: flex-end;
                 background: transparent;
                 box-shadow: none;
             }
@@ -153,6 +173,9 @@
             <a href="#" class="nav-sidebar-link" onclick="showTab('settings', this)">
                 <i class="bi bi-gear"></i> Settings
             </a>
+            <button type="button" class="nav-sidebar-link w-100 border-0 bg-transparent text-start" onclick="toggleTheme()">
+                <i class="bi bi-moon-stars"></i> Theme
+            </button>
         </nav>
 
         <div class="mt-auto pt-5 border-top">
@@ -171,7 +194,7 @@
     <!-- Main Content -->
     <main class="main-content">
         <div id="overview-tab" class="dashboard-tab">
-        <div class="d-flex justify-content-between align-items-center mb-5 flex-wrap gap-3">
+        <div class="d-flex justify-content-between align-items-center mb-5 flex-wrap gap-3 dashboard-overview-header">
             <div>
                 <h2 class="brand-font display-6 mb-1">Hello, Elena</h2>
                 <p class="text-muted">You are 28 weeks into your journey. Keep glowing!</p>
@@ -180,8 +203,8 @@
                     <button class="btn btn-sm btn-outline-secondary rounded-circle dashboard-hamburger d-lg-none" aria-label="Open menu" onclick="toggleSidebar()">
                         <i class="bi bi-list"></i>
                     </button>
-                    <button class="btn btn-sm btn-outline-secondary rounded-circle" id="theme-toggle"><i class="bi bi-moon-stars"></i></button>
-                    <button class="btn btn-sm btn-outline-secondary rounded-circle"><i class="bi bi-bell"></i></button>
+                    <button class="btn btn-sm btn-outline-secondary rounded-circle d-none d-lg-inline-flex" id="theme-toggle"><i class="bi bi-moon-stars"></i></button>
+                    <button class="btn btn-sm btn-outline-secondary rounded-circle d-none d-lg-inline-flex"><i class="bi bi-bell"></i></button>
                 </div>
             </div>
 
