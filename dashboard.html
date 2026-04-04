@@ -112,6 +112,33 @@
             gap: 0.5rem;
             font-size: 0.95rem;
         }
+        .dashboard-mobile-menu .dropdown-menu {
+            min-width: 220px;
+        }
+        .dashboard-mobile-menu .dropdown-item i {
+            width: 22px;
+            text-align: center;
+        }
+        [data-bs-theme="dark"] .dashboard-mobile-menu .dropdown-menu {
+            background: #1E1E1E;
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+        [data-bs-theme="dark"] .dashboard-mobile-menu .dropdown-item {
+            color: #fff;
+        }
+        [data-bs-theme="dark"] .dashboard-mobile-menu .dropdown-item i {
+            color: #fff;
+        }
+        .nav-theme-toggle {
+            color: var(--text-color);
+        }
+        .nav-theme-toggle:hover,
+        .nav-theme-toggle:focus-visible {
+            color: #fff;
+        }
+        .nav-theme-toggle i {
+            color: inherit;
+        }
 
         [data-bs-theme="dark"] .dashboard-header-controls {
             background: rgba(255, 255, 255, 0.08);
@@ -197,7 +224,7 @@
             <a href="#" class="nav-sidebar-link" onclick="showTab('settings', this)">
                 <i class="bi bi-gear"></i> Settings
             </a>
-            <button type="button" class="nav-sidebar-link w-100 border-0 bg-transparent text-start" onclick="toggleTheme()">
+            <button type="button" class="nav-sidebar-link nav-theme-toggle w-100 border-0 bg-transparent text-start" onclick="toggleTheme()">
                 <i class="bi bi-moon-stars"></i> Theme
             </button>
         </nav>
@@ -294,9 +321,28 @@
         </div>
 
         <div id="mobile-dashboard-controls" class="d-flex d-lg-none justify-content-end mb-4">
-            <button class="btn btn-sm btn-outline-secondary rounded-circle dashboard-hamburger" aria-label="Open menu" onclick="toggleSidebar()">
-                <i class="bi bi-list"></i>
-            </button>
+            <div class="dropdown dashboard-mobile-menu">
+                <button class="btn btn-sm btn-outline-secondary rounded-circle dashboard-hamburger dropdown-toggle" aria-label="Open menu" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-list"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end shadow-lg">
+                    <li>
+                        <button class="dropdown-item" type="button" onclick="toggleTheme()">
+                            <i class="bi bi-moon-stars"></i> Theme
+                        </button>
+                    </li>
+                    <li>
+                        <button class="dropdown-item" type="button">
+                            <i class="bi bi-bell"></i> Notifications
+                        </button>
+                    </li>
+                    <li>
+                        <button class="dropdown-item" type="button" onclick="toggleSidebar()">
+                            <i class="bi bi-layout-three-columns"></i> Open navigation
+                        </button>
+                    </li>
+                </ul>
+            </div>
         </div>
 
         <!-- Placeholder Tabs -->
@@ -325,6 +371,70 @@
                             <h6 class="mb-0">Breathing Exercises Video</h6>
                             <small class="text-muted">High Quality • 15:00 min</small>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="messages-tab" class="dashboard-tab d-none py-5">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="dashboard-card p-3 h-100">
+                        <h5 class="mb-4 brand-font">Recent Chats</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-3">
+                                <button class="btn btn-outline-primary w-100 text-start rounded-pill py-2 d-flex align-items-center gap-2 active">
+                                    <i class="bi bi-person-lines-fill"></i>
+                                    <span>Elena ↔ Maya</span>
+                                </button>
+                            </li>
+                            <li class="mb-3">
+                                <button class="btn btn-outline-secondary w-100 text-start rounded-pill py-2 d-flex align-items-center gap-2">
+                                    <i class="bi bi-people"></i>
+                                    <span>Doula Circle</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="btn btn-outline-secondary w-100 text-start rounded-pill py-2 d-flex align-items-center gap-2">
+                                    <i class="bi bi-clipboard-data"></i>
+                                    <span>Birth Educator</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="dashboard-card p-4 h-100 d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div>
+                                <h5 class="mb-1 brand-font">Chat with Maya Rivera</h5>
+                                <small class="text-muted">Last seen 2m ago</small>
+                            </div>
+                            <button class="btn btn-outline-secondary btn-sm rounded-circle">
+                                <i class="bi bi-three-dots-vertical"></i>
+                            </button>
+                        </div>
+                        <div class="flex-grow-1 overflow-auto mb-4" style="max-height: 360px;">
+                            <div class="mb-3 text-muted small">Today</div>
+                            <div class="bg-soft p-3 rounded-md mb-3" style="max-width: 70%;">
+                                <p class="mb-1">Hi Elena! I reviewed your birth goals—let’s add a reminder about your comfort preferences before the next visit.</p>
+                                <small class="text-muted">Maya • 9:12 AM</small>
+                            </div>
+                            <div class="bg-primary-color text-white p-3 rounded-md align-self-end mb-3" style="max-width: 70%;">
+                                <p class="mb-1">That sounds great! Can we also set a short meeting on Thursday?</p>
+                                <small class="opacity-75">You • 9:15 AM</small>
+                            </div>
+                            <div class="bg-soft p-3 rounded-md mb-3" style="max-width: 70%;">
+                                <p class="mb-1">Absolutely—Thursday at 4pm works.</p>
+                                <small class="text-muted">Maya • 9:16 AM</small>
+                            </div>
+                        </div>
+                        <form class="mt-auto d-flex gap-2">
+                            <input type="text" class="form-control" placeholder="Type a message..." aria-label="Type a message">
+                            <button class="btn btn-primary px-4" type="button">
+                                <i class="bi bi-send"></i>
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
