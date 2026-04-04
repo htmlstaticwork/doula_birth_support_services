@@ -51,12 +51,23 @@
             transition: var(--transition);
         }
 
-        .nav-sidebar-link:hover, .nav-sidebar-link.active {
+        .nav-sidebar-link:hover, .nav-sidebar-link.active, .nav-sidebar-link:focus-visible {
             background: var(--primary-color);
             color: #fff;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
         }
 
-        .nav-sidebar-link i { font-size: 1.2rem; margin-right: 12px; }
+        .nav-sidebar-link i {
+            font-size: 1.2rem;
+            margin-right: 12px;
+            color: inherit;
+            transition: color var(--transition);
+        }
+        .nav-sidebar-link:hover i,
+        .nav-sidebar-link.active i,
+        .nav-sidebar-link:focus-visible i {
+            color: inherit;
+        }
 
         .dashboard-card {
             border: 0;
@@ -104,6 +115,19 @@
 
         [data-bs-theme="dark"] .dashboard-header-controls {
             background: rgba(255, 255, 255, 0.08);
+        }
+        [data-bs-theme="dark"] .dashboard-header-controls .btn {
+            border-color: rgba(255, 255, 255, 0.35);
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+        }
+        [data-bs-theme="dark"] .dashboard-header-controls .btn i {
+            color: #fff;
+        }
+        [data-bs-theme="dark"] .dashboard-header-controls .btn:hover,
+        [data-bs-theme="dark"] .dashboard-header-controls .btn:focus-visible {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.45);
         }
 
         .dashboard-settings-grid .dashboard-settings-card {
@@ -267,6 +291,12 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div id="mobile-dashboard-controls" class="d-flex d-lg-none justify-content-end mb-4">
+            <button class="btn btn-sm btn-outline-secondary rounded-circle dashboard-hamburger" aria-label="Open menu" onclick="toggleSidebar()">
+                <i class="bi bi-list"></i>
+            </button>
         </div>
 
         <!-- Placeholder Tabs -->

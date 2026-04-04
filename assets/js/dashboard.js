@@ -43,6 +43,11 @@ window.showTab = (tabID, element = null) => {
     if (sidebar.classList.contains('active')) {
         sidebar.classList.remove('active');
     }
+
+    const mobileControls = document.getElementById('mobile-dashboard-controls');
+    if (mobileControls) {
+        mobileControls.classList.toggle('d-none', tabID === 'overview');
+    }
 };
 
 /**
