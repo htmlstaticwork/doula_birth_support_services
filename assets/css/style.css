@@ -350,6 +350,7 @@ h1, h2, h3, h4, h5, h6, .brand-font {
     border-bottom: 1px solid var(--border-color);
     padding: 1.2rem 0;
     transition: all 0.4s ease; /* Added for smooth scrolling effect */
+    z-index: 1030;
 }
 
 /* Fix for mobile menu (offcanvas) inside navbar:
@@ -444,7 +445,34 @@ h1, h2, h3, h4, h5, h6, .brand-font {
     color: #fff !important;
 }
 
-.nav-link::after {
+.navbar-dark.bg-transparent .login-btn {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.navbar-dark.bg-transparent .login-btn:hover,
+.navbar-dark.bg-transparent .login-btn:focus-visible {
+    background-color: #fff;
+    color: var(--primary-color);
+    border-color: #fff;
+}
+
+.navbar-dark.bg-transparent {
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 1024px) {
+    #offcanvasNavbar .navbar-nav {
+        gap: 0.85rem;
+    }
+    #offcanvasNavbar .login-btn,
+    #offcanvasNavbar .nav-link.btn {
+        width: 100%;
+    }
+}
+
+.nav-link:not(.btn):not(.login-btn)::after {
     content: '';
     position: absolute;
     width: 0;
@@ -455,7 +483,7 @@ h1, h2, h3, h4, h5, h6, .brand-font {
     transition: width 0.3s;
 }
 
-.nav-link.active::after, .nav-link:hover::after {
+.nav-link:not(.btn):not(.login-btn).active::after, .nav-link:not(.btn):not(.login-btn):hover::after {
     width: 100%;
 }
 
@@ -537,6 +565,52 @@ h1, h2, h3, h4, h5, h6, .brand-font {
     outline-offset: 3px;
 }
 
+@media (max-width: 1024px) {
+    .contact-info .d-flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.65rem;
+        justify-content: center;
+    }
+
+    .contact-info .contact-icon-wrap {
+        margin-right: 0;
+        margin-bottom: 0.35rem;
+        margin-left: 0;
+    }
+
+    .contact-info h5,
+    .contact-info p {
+        text-align: center;
+    }
+
+.contact-info .d-flex.align-items-start {
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .contact-info .contact-icon-wrap {
+        margin-inline-start: 0 !important;
+        margin-inline-end: 0 !important;
+    }
+
+    .contact-section h2.brand-font.mb-4 {
+        text-align: center;
+    }
+
+    .contact-socials,
+    .contact-info + .social-links {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .contact-socials .btn,
+    .contact-info + .social-links .btn {
+        margin: 0 0.35rem;
+    }
+}
+
 .icon-box .bi {
     font-size: 1.5rem;
     line-height: 1;
@@ -548,6 +622,49 @@ h1, h2, h3, h4, h5, h6, .brand-font {
     border-radius: 999px;
     padding: 0.15rem 0.9rem;
     font-size: 0.75rem;
+}
+
+.share-links {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    flex-wrap: wrap;
+}
+
+.share-links a {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid rgba(46, 63, 48, 0.25);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    transition: var(--transition);
+}
+
+.share-links a:hover {
+    color: #fff;
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+    .share-links {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .share-links span {
+        width: 100%;
+        text-align: center;
+    }
+
+    .share-links a {
+        width: 40px;
+        height: 40px;
+    }
 }
 
 /* Cards */
@@ -563,6 +680,22 @@ h1, h2, h3, h4, h5, h6, .brand-font {
 .card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.pricing-section .card {
+    text-align: center;
+}
+
+.pricing-section .price-list {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.pricing-section .price-list li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
 }
 
 /* Accordion */
@@ -613,6 +746,38 @@ h1, h2, h3, h4, h5, h6, .brand-font {
 .text-theme { color: var(--text-color) !important; }
 .text-muted-theme { color: var(--text-muted) !important; }
 
+#scrollTopBtn {
+    position: fixed;
+    right: clamp(1rem, 1.8vw, 1.8rem);
+    bottom: clamp(1rem, 2vw, 2.5rem);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--primary-color);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1050;
+}
+
+#scrollTopBtn.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(-5px);
+}
+
+#scrollTopBtn:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+}
+
 /* Sticky Nav for Dark Mode */
 [data-bs-theme="dark"] .navbar.bg-white {
     background-color: var(--card-bg) !important;
@@ -629,8 +794,8 @@ h1, h2, h3, h4, h5, h6, .brand-font {
 
 [data-bs-theme="dark"] .offcanvas,
 [data-bs-theme="dark"] .dropdown-menu {
-    background-color: var(--card-bg) !important;
-    border: 1px solid var(--border-color) !important;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
 }
 
 [data-bs-theme="dark"] .btn-close {
@@ -657,6 +822,22 @@ h1, h2, h3, h4, h5, h6, .brand-font {
     font-size: clamp(2.5rem, 8vw, 4.5rem);
     line-height: 1.1;
     margin-bottom: 1.5rem;
+}
+
+.service-hero {
+    padding-top: calc(3rem + 60px);
+}
+
+@media (max-width: 992px) {
+    .service-hero {
+        padding-top: calc(3rem + 85px);
+    }
+}
+
+@media (max-width: 576px) {
+    .service-hero {
+        padding-top: calc(3rem + 105px);
+    }
 }
 
 .hero-cta-group .btn {
@@ -689,6 +870,17 @@ h1, h2, h3, h4, h5, h6, .brand-font {
     .hero-cta-group .btn {
         width: 100%;
         min-width: auto;
+    }
+}
+
+@media (max-width: 1024px) {
+    .pricing-section .card {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .pricing-section .price-list {
+        margin-inline: auto;
     }
 }
 

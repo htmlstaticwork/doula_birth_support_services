@@ -24,33 +24,67 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. Sticky Navbar
     const navbar = document.querySelector('.navbar');
+    const navbarStartsTransparent = navbar ? navbar.hasAttribute('data-starts-transparent') : false;
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.classList.add('scrolled', 'navbar-light', 'bg-white');
+            if (navbar) {
+                navbar.classList.add('scrolled', 'navbar-light', 'bg-white');
+                if (navbarStartsTransparent) {
+                    navbar.classList.remove('navbar-dark', 'bg-transparent');
+                }
+            }
         } else {
-            navbar.classList.remove('scrolled', 'navbar-light', 'bg-white');
+            if (navbar) {
+                navbar.classList.remove('scrolled', 'navbar-light', 'bg-white');
+                if (navbarStartsTransparent) {
+                    navbar.classList.add('navbar-dark', 'bg-transparent');
+                }
+            }
         }
     });
 
-    // 4. Dark Mode Toggle
+    // 4. Scroll-to-top control
+    const scrollBtn = document.createElement('button');
+    scrollBtn.id = 'scrollTopBtn';
+    scrollBtn.type = 'button';
+    scrollBtn.setAttribute('aria-label', 'Scroll to top');
+    scrollBtn.innerHTML = '<i class="bi bi-arrow-up-short fs-4"></i>';
+    document.body.appendChild(scrollBtn);
+
+    const toggleScrollBtn = () => {
+        if (window.scrollY > 250) {
+            scrollBtn.classList.add('visible');
+        } else {
+            scrollBtn.classList.remove('visible');
+        }
+    };
+
+    window.addEventListener('scroll', toggleScrollBtn);
+    toggleScrollBtn();
+
+    scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // 5. Dark Mode Toggle
     const themeBtn = document.getElementById('theme-toggle');
     if (themeBtn) {
         themeBtn.addEventListener('click', toggleTheme);
     }
 
-    // 5. RTL Toggle (Demo Purposes)
+    // 6. RTL Toggle (Demo Purposes)
     const rtlBtn = document.getElementById('rtl-toggle');
     if (rtlBtn) {
         rtlBtn.addEventListener('click', toggleRTL);
     }
 
-    // 6. Active Link Highlighting
+    // 7. Active Link Highlighting
     highlightActiveLink();
 
-    // 7. Form Validation (Bootstrap 5)
+    // 8. Form Validation (Bootstrap 5)
     initForms();
 
-    // 8. Offcanvas helpers (improve mobile/ tablet menu interactivity)
+    // 9. Offcanvas helpers (improve mobile/ tablet menu interactivity)
     initOffcanvasMenu();
 });
 
