@@ -31,12 +31,7 @@ window.showTab = (tabID, element = null) => {
         target.classList.remove('d-none');
     }
 
-    // Update active state in sidebar
-    if (element) {
-        const links = document.querySelectorAll('.nav-sidebar-link');
-        links.forEach(link => link.classList.remove('active'));
-        element.classList.add('active');
-    }
+    updateSidebarActive(tabID, element);
 
     // Close mobile sidebar if open
     const sidebar = document.querySelector('.sidebar-nav');
@@ -49,6 +44,23 @@ window.showTab = (tabID, element = null) => {
         mobileControls.classList.toggle('d-none', tabID === 'overview');
     }
 };
+
+/**
+ * Highlight the current sidebar link
+ */
+function updateSidebarActive(tabID, element = null) {
+    const links = document.querySelectorAll('.nav-sidebar-link');
+    links.forEach(link => link.classList.remove('active'));
+    let targetLink = null;
+    if (element && element.classList.contains('nav-sidebar-link')) {
+        targetLink = element;
+    } else {
+        targetLink = document.querySelector(`.nav-sidebar-link[data-tab="${tabID}"]`);
+    }
+    if (targetLink) {
+        targetLink.classList.add('active');
+    }
+}
 
 /**
  * Simple Countdown Logic

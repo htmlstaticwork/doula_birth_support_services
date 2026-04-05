@@ -131,10 +131,18 @@
         }
         .nav-theme-toggle {
             color: var(--text-color);
+            transition: var(--transition);
         }
         .nav-theme-toggle:hover,
         .nav-theme-toggle:focus-visible {
+            color: var(--primary-color);
+            background: rgba(74, 93, 74, 0.08);
+            border-radius: var(--radius-sm);
+        }
+        [data-bs-theme="dark"] .nav-theme-toggle:hover,
+        [data-bs-theme="dark"] .nav-theme-toggle:focus-visible {
             color: #fff;
+            background: rgba(255, 255, 255, 0.08);
         }
         .nav-theme-toggle i {
             color: inherit;
@@ -208,22 +216,22 @@
             </a>
         </div>
 
-        <nav>
-            <a href="#" class="nav-sidebar-link active" onclick="showTab('overview', this)">
-                <i class="bi bi-speedometer2"></i> Overview
-            </a>
-            <a href="#" class="nav-sidebar-link" onclick="showTab('packages', this)">
-                <i class="bi bi-box-seam"></i> Birth Packages
-            </a>
-            <a href="#" class="nav-sidebar-link" onclick="showTab('resources', this)">
-                <i class="bi bi-journal-text"></i> Resources
-            </a>
-            <a href="#" class="nav-sidebar-link" onclick="showTab('messages', this)">
-                <i class="bi bi-chat-dots"></i> Messaging
-            </a>
-            <a href="#" class="nav-sidebar-link" onclick="showTab('settings', this)">
-                <i class="bi bi-gear"></i> Settings
-            </a>
+            <nav>
+                <a href="#" class="nav-sidebar-link active" data-tab="overview" onclick="showTab('overview', this)">
+                    <i class="bi bi-speedometer2"></i> Overview
+                </a>
+                <a href="#" class="nav-sidebar-link" data-tab="packages" onclick="showTab('packages', this)">
+                    <i class="bi bi-box-seam"></i> Birth Packages
+                </a>
+                <a href="#" class="nav-sidebar-link" data-tab="resources" onclick="showTab('resources', this)">
+                    <i class="bi bi-journal-text"></i> Resources
+                </a>
+                <a href="#" class="nav-sidebar-link" data-tab="messages" onclick="showTab('messages', this)">
+                    <i class="bi bi-chat-dots"></i> Messaging
+                </a>
+                <a href="#" class="nav-sidebar-link" data-tab="settings" onclick="showTab('settings', this)">
+                    <i class="bi bi-gear"></i> Settings
+                </a>
             <button type="button" class="nav-sidebar-link nav-theme-toggle w-100 border-0 bg-transparent text-start" onclick="toggleTheme()">
                 <i class="bi bi-moon-stars"></i> Theme
             </button>
@@ -327,19 +335,29 @@
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end shadow-lg">
                     <li>
-                        <button class="dropdown-item" type="button" onclick="toggleTheme()">
-                            <i class="bi bi-moon-stars"></i> Theme
-                        </button>
+                        <a class="dropdown-item" href="#" onclick="showTab('overview')">
+                            <i class="bi bi-speedometer2"></i> Overview
+                        </a>
                     </li>
                     <li>
-                        <button class="dropdown-item" type="button">
-                            <i class="bi bi-bell"></i> Notifications
-                        </button>
+                        <a class="dropdown-item" href="#" onclick="showTab('packages')">
+                            <i class="bi bi-box-seam"></i> Birth Packages
+                        </a>
                     </li>
                     <li>
-                        <button class="dropdown-item" type="button" onclick="toggleSidebar()">
-                            <i class="bi bi-layout-three-columns"></i> Open navigation
-                        </button>
+                        <a class="dropdown-item" href="#" onclick="showTab('resources')">
+                            <i class="bi bi-journal-text"></i> Resources
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#" onclick="showTab('messages')">
+                            <i class="bi bi-chat-dots"></i> Messaging
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#" onclick="showTab('settings')">
+                            <i class="bi bi-gear"></i> Settings
+                        </a>
                     </li>
                 </ul>
             </div>

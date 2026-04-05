@@ -505,6 +505,11 @@ h1, h2, h3, h4, h5, h6, .brand-font {
     #offcanvasNavbar .nav-link.btn {
         width: 100%;
     }
+    #offcanvasNavbar .nav-controls {
+        margin-top: 1.25rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--border-color);
+    }
 }
 
 .nav-link:not(.btn):not(.login-btn)::after {

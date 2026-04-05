@@ -17,11 +17,32 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
-        .timeline { position: relative; padding-left: 2rem; border-left: 2px solid var(--secondary-color); }
-        .timeline-step { position: relative; margin-bottom: 2rem; }
+        body {
+            padding-top: 100px;
+        }
+        @media (max-width: 768px) {
+            body {
+                padding-top: 140px;
+            }
+        }
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid var(--secondary-color);
+        }
+        .timeline-step {
+            position: relative;
+            margin-bottom: 2rem;
+        }
         .timeline-step::before {
-            content: ''; position: absolute; left: calc(-2rem - 6px); top: 5px;
-            width: 12px; height: 12px; background: var(--primary-color); border-radius: 50%;
+            content: '';
+            position: absolute;
+            left: calc(-2rem - 6px);
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: var(--primary-color);
+            border-radius: 50%;
         }
     </style>
 </head>
