@@ -32,16 +32,13 @@ window.showTab = (tabID, element = null) => {
     }
 
     updateSidebarActive(tabID, element);
-
-    // Close mobile sidebar if open
+    
+    // Close mobile sidebar if open (for mobile UX)
     const sidebar = document.querySelector('.sidebar-nav');
+    const overlay = document.querySelector('.sidebar-overlay');
     if (sidebar.classList.contains('active')) {
         sidebar.classList.remove('active');
-    }
-
-    const mobileControls = document.getElementById('mobile-dashboard-controls');
-    if (mobileControls) {
-        mobileControls.classList.toggle('d-none', tabID === 'overview');
+        if (overlay) overlay.classList.remove('active');
     }
 };
 
@@ -79,5 +76,7 @@ function initCountdown() {
  */
 window.toggleSidebar = () => {
     const sidebar = document.querySelector('.sidebar-nav');
-    sidebar.classList.toggle('active');
+    const overlay = document.querySelector('.sidebar-overlay');
+    if (sidebar) sidebar.classList.toggle('active');
+    if (overlay) overlay.classList.toggle('active');
 };

@@ -174,9 +174,32 @@
             border-color: rgba(255,255,255,0.08);
         }
 
-        /* Mobile Sidebar */
+        /* Sidebar Overlay (Mobile) */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(4px);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+        .sidebar-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Mobile Sidebar Enhancement */
         @media (max-width: 1024px) {
-            .sidebar-nav { left: -100%; }
+            .sidebar-nav { 
+                left: -280px; 
+                width: 280px;
+                box-shadow: 20px 0 50px rgba(0,0,0,0.1);
+            }
             .sidebar-nav.active { left: 0; }
             .main-content { margin-left: 0; padding: 20px; }
             .mobile-toggle { display: none !important; }
@@ -203,10 +226,8 @@
 </head>
 <body>
 
-    <!-- Sidebar Mobile Toggle -->
-    <button class="btn btn-primary position-fixed bottom-0 end-0 m-4 rounded-circle shadow-lg mobile-toggle d-none" style="z-index: 1100;" onclick="document.querySelector('.sidebar-nav').classList.toggle('active')">
-        <i class="bi bi-list fs-4"></i>
-    </button>
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
 
     <!-- Sidebar -->
     <div class="sidebar-nav">
@@ -328,40 +349,6 @@
             </div>
         </div>
 
-        <div id="mobile-dashboard-controls" class="d-flex d-lg-none justify-content-end mb-4">
-            <div class="dropdown dashboard-mobile-menu">
-                <button class="btn btn-sm btn-outline-secondary rounded-circle dashboard-hamburger dropdown-toggle" aria-label="Open menu" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-list"></i>
-                </button>
-                <ul class="dropdown-menu dropdown-menu-end shadow-lg">
-                    <li>
-                        <a class="dropdown-item" href="#" onclick="showTab('overview')">
-                            <i class="bi bi-speedometer2"></i> Overview
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#" onclick="showTab('packages')">
-                            <i class="bi bi-box-seam"></i> Birth Packages
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#" onclick="showTab('resources')">
-                            <i class="bi bi-journal-text"></i> Resources
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#" onclick="showTab('messages')">
-                            <i class="bi bi-chat-dots"></i> Messaging
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#" onclick="showTab('settings')">
-                            <i class="bi bi-gear"></i> Settings
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
 
         <!-- Placeholder Tabs -->
         <div id="packages-tab" class="dashboard-tab d-none text-center py-5">
