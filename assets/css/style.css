@@ -245,9 +245,9 @@ h1, h2, h3, h4, h5, h6, .brand-font {
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    color: #fff;
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: #fff !important;
 }
 
 .btn-primary:hover, .btn-primary:focus {
@@ -258,14 +258,14 @@ h1, h2, h3, h4, h5, h6, .brand-font {
 }
 
 .btn-secondary {
-    background-color: var(--secondary-color);
-    border-color: var(--secondary-color);
-    color: var(--text-color);
+    background-color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+    color: var(--text-color) !important;
 }
 
 .btn-secondary:hover {
-    background-color: #E6DBC0;
-    border-color: #E6DBC0;
+    background-color: #E6DBC0 !important;
+    border-color: #E6DBC0 !important;
 }
 
 .btn-outline-primary, .btn-outline-secondary {
