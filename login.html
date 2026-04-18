@@ -15,20 +15,23 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
-        body { background-color: var(--secondary-color); min-height: 100vh; display: flex; align-items: center; justify-content: center; }
-        .auth-container { width: 100%; max-width: 450px; background: var(--card-bg); padding: 40px; border-radius: var(--radius-md); box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid var(--border-color); }
+        body { background-color: var(--secondary-color); min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 20px; }
+        .auth-container { width: 100%; max-width: 450px; background: var(--card-bg); padding: 40px; border-radius: var(--radius-md); box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid var(--border-color); margin: auto; }
+        .auth-header-controls { width: 100%; max-width: 450px; display: flex; justify-content: flex-end; margin-bottom: 15px; }
     </style>
 </head>
 <body>
 
     <!-- Theme & RTL Controls (Top Right) -->
-    <div class="position-fixed top-0 end-0 p-3 d-flex gap-2" style="z-index: 1050;">
-        <button class="btn btn-sm btn-outline-secondary rounded-circle" id="theme-toggle" title="Toggle Theme">
-            <i class="bi bi-moon-stars"></i>
-        </button>
-        <button class="btn btn-sm btn-outline-secondary rounded-circle" id="rtl-toggle" title="Toggle RTL">
-            <i class="bi bi-translate"></i>
-        </button>
+    <div class="auth-header-controls">
+        <div class="d-flex gap-2">
+            <button class="btn btn-sm btn-outline-secondary rounded-circle" id="theme-toggle" title="Toggle Theme">
+                <i class="bi bi-moon-stars"></i>
+            </button>
+            <button class="btn btn-sm btn-outline-secondary rounded-circle" id="rtl-toggle" title="Toggle RTL">
+                <i class="bi bi-text-indent-right"></i>
+            </button>
+        </div>
     </div>
 
     <div class="auth-container">
