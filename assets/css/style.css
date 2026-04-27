@@ -896,6 +896,28 @@ h1, h2, h3, h4, h5, h6, .brand-font {
     border: 1px solid var(--border-color);
 }
 
+[data-bs-theme="dark"] .offcanvas .nav-link:not(.btn):not(.login-btn),
+[data-bs-theme="dark"] .dropdown-item {
+    color: var(--text-color) !important;
+}
+
+[data-bs-theme="dark"] .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: var(--primary-color) !important;
+}
+
+[data-bs-theme="dark"] .offcanvas-title {
+    color: var(--text-color);
+}
+
+[data-bs-theme="dark"] .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-bs-theme="dark"] .navbar-toggler-icon {
+    filter: invert(1) brightness(1.5);
+}
+
 [data-bs-theme="dark"] .btn-close {
     filter: invert(1) grayscale(100%) brightness(200%);
 }

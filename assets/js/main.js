@@ -26,16 +26,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
     const navbarStartsTransparent = navbar ? navbar.hasAttribute('data-starts-transparent') : false;
     window.addEventListener('scroll', () => {
+        const isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark';
         if (window.scrollY > 50) {
             if (navbar) {
-                navbar.classList.add('scrolled', 'navbar-light', 'bg-white');
+                navbar.classList.add('scrolled');
+                if (isDark) {
+                    navbar.classList.add('navbar-dark', 'bg-dark');
+                    navbar.classList.remove('navbar-light', 'bg-white');
+                } else {
+                    navbar.classList.add('navbar-light', 'bg-white');
+                    navbar.classList.remove('navbar-dark', 'bg-dark');
+                }
+                
                 if (navbarStartsTransparent) {
-                    navbar.classList.remove('navbar-dark', 'bg-transparent');
+                    navbar.classList.remove('bg-transparent');
                 }
             }
         } else {
             if (navbar) {
-                navbar.classList.remove('scrolled', 'navbar-light', 'bg-white');
+                navbar.classList.remove('scrolled', 'navbar-light', 'bg-white', 'navbar-dark', 'bg-dark');
                 if (navbarStartsTransparent) {
                     navbar.classList.add('navbar-dark', 'bg-transparent');
                 }
